@@ -651,7 +651,7 @@
             }
         }
         ;
-        globalThis.fetchData = async function fetchData(e) {
+        async function fetchData(e) {
             let t = await getRandomCdn()
               , a = await v.Z.post("https://".concat(t, "/v2/info"), {
                 url: e
@@ -659,6 +659,8 @@
               , s = a.data;
             return s
         }
+        globalThis.fetchData = fetchData;
+
         var home_Link = e => {
             let {data: t, contentType: a} = e
               , [n,l] = (0,
